@@ -64,6 +64,6 @@ namespace orc {
                           uint64_t fbs);
   };
 
-}  
+}  // namespace orc
 
 #endif

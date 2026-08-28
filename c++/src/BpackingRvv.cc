@@ -218,8 +218,7 @@ namespace orc {
       constexpr uint64_t kByteMask = 0x00FF00FF00FF00FFULL;  // keep even byte positions
       constexpr uint64_t kWordMask = 0x0000FFFF0000FFFFULL;  // keep even 16-bit groups
 
-      vuint64m8_t u =
-          __riscv_vlse64_v_u64m8(reinterpret_cast<const uint64_t*>(src), NB, vl);
+      vuint64m8_t u = __riscv_vlse64_v_u64m8(reinterpret_cast<const uint64_t*>(src), NB, vl);
 
       // Byte-reverse every lane: swap adjacent bytes, then 16-bit groups, then
       // 32-bit groups. All operations are pure ALU (no gather, no vbrev8).
@@ -367,14 +366,10 @@ namespace orc {
       }
     }
 
-  }  
-  UnpackRvv::UnpackRvv(RleDecoderV2* dec) : decoder(dec), unpackDefault(UnpackDefault(dec)) {
+  }  // namespace
+  UnpackRvv::UnpackRvv(RleDecoderV2* dec) : decoder(dec), unpackDefault(UnpackDefault(dec)) {}
 
-  }
-
-  UnpackRvv::~UnpackRvv() {
-
-  }
+  UnpackRvv::~UnpackRvv() {}
 
   void UnpackRvv::vectorUnpack(int64_t* data, uint64_t offset, uint64_t len, uint32_t bitWidth) {
     switch (bitWidth) {
@@ -440,6 +435,6 @@ namespace orc {
     }
   }
 
-}  
+}  // namespace orc
 
 #endif
