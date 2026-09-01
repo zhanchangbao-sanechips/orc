@@ -23,6 +23,7 @@
 #include <vector>
 
 #include "CpuInfoUtil.hh"
+#include "orc/Exceptions.hh"
 
 namespace orc {
   enum class DispatchLevel : int {

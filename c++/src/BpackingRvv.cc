@@ -367,7 +367,7 @@ namespace orc {
     }
 
   }  // namespace
-  UnpackRvv::UnpackRvv(RleDecoderV2* dec) : decoder(dec), unpackDefault(UnpackDefault(dec)) {}
+  UnpackRvv::UnpackRvv(RleDecoderV2* dec) : decoder_(dec), unpackDefault_(UnpackDefault(dec)) {}
 
   UnpackRvv::~UnpackRvv() {}
 

@@ -54,8 +54,8 @@ namespace orc {
     void vectorUnpack(int64_t* data, uint64_t offset, uint64_t len, uint32_t bitWidth);
 
    private:
-    RleDecoderV2* decoder;
-    UnpackDefault unpackDefault;
+    RleDecoderV2* decoder_;
+    UnpackDefault unpackDefault_;
   };
 
   class BitUnpackRVV : public BitUnpack {
